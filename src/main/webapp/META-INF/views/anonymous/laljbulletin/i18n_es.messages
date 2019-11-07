@@ -1,0 +1,31 @@
+# i18n_es.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+########################################### Feature: anonimo crea un boletin (Yassin Lalj).
+anonymous.laljbulletin.form.label.event = Evento:
+anonymous.laljbulletin.form.label.momentOfEvent = Fecha y hora del evento:
+anonymous.laljbulletin.form.label.location = Localización:
+anonymous.laljbulletin.form.label.euros = Euros:
+anonymous.laljbulletin.form.button.create = Crear este boletin
+anonymous.laljbulletin.form.button.return = Volver
+
+anonymous.laljbulletin.form.initialMessage = \
+	En este formulario puede crear un boletín informativo sobre \
+	un evento en la ciudad de Sevilla.
+
+########################################### Feature: anonimo lista boletines (Yassin Lalj).
+anonymous.laljbulletin.list.label.event = Evento
+anonymous.laljbulletin.list.label.momentOfEvent = Fecha y hora del evento
+anonymous.laljbulletin.list.label.location = Localización
+anonymous.laljbulletin.list.label.euros = Euros
+
+anonymous.laljbulletin.list.initialMessage = \
+	Aquí está la lista de boletines sobre eventos \
+	en la ciudad de Sevilla.
