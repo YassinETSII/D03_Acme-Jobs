@@ -13,6 +13,9 @@ administrator.announcement.form.label.title = Title:
 administrator.announcement.form.label.moment = Moment of creation:
 administrator.announcement.form.label.moreInfo = More info:
 administrator.announcement.form.label.text = Text:
+administrator.announcement.form.button.create = Create announcement
+administrator.announcement.form.button.update = Update announcement
+administrator.announcement.form.button.delete = Delete announcement
 administrator.announcement.form.button.return = Return
 
 ########################################### Feature: administrator lists announcements.
