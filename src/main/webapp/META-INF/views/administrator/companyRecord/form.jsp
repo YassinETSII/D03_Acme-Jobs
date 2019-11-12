@@ -16,19 +16,19 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:form-textbox code="authenticated.companyRecord.form.label.company" path="company"/>
-	<acme:form-textbox code="authenticated.companyRecord.form.label.sector" path="sector"/>
-	<acme:form-textbox code="authenticated.companyRecord.form.label.ceo" path="CEO"/>
-	<acme:form-textarea code="authenticated.companyRecord.form.label.description" path="description"/>
-	<acme:form-url code="authenticated.companyRecord.form.label.web" path="web"/>
-	<acme:form-textbox code="authenticated.companyRecord.form.label.phone" path="phone"/>
-	<acme:form-textbox code="authenticated.companyRecord.form.label.email" path="email"/>
+	<acme:form-textbox code="administrator.companyRecord.form.label.company" path="company"/>
+	<acme:form-textbox code="administrator.companyRecord.form.label.sector" path="sector"/>
+	<acme:form-textbox code="administrator.companyRecord.form.label.ceo" path="CEO"/>
+	<acme:form-textarea code="administrator.companyRecord.form.label.description" path="description"/>
+	<acme:form-url code="administrator.companyRecord.form.label.web" path="web"/>
+	<acme:form-textbox code="administrator.companyRecord.form.label.phone" path="phone"/>
+	<acme:form-textbox code="administrator.companyRecord.form.label.email" path="email"/>
 	<jstl:if test="${command == 'create'}">
 		<acme:form-checkbox
 		code="administrator.companyRecord.form.label.incorporated" 
 		path="incorporated"/>
 	</jstl:if>
-	<acme:form-integer code="authenticated.companyRecord.form.label.stars" path="stars"/>
+	<acme:form-integer code="administrator.companyRecord.form.label.stars" path="stars"/>
 	
 	<acme:form-submit test="${command == 'show'}"
 		code="administrator.companyRecord.form.button.update"
