@@ -16,9 +16,9 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<import resource="conversion-service.xml" />
-	
+
 	<!--  Shouts -->
-	
+		
 	<bean id="shout01" class="acme.entities.shouts.Shout">
 		<property name="author" value="Yassin Lalj"/>
 		<property name="text" value="Let's goooo!"/>
@@ -404,6 +404,39 @@
 		<property name="slogan" value="We make the best bikes!"/>
 		<property name="URL" value="https://www.tumblr.com"/>
 		<property name="jingle" value="la lalala lololo we'are the best!"/>
-	</bean>	
+	</bean>		
+		
+	<!-- Providers -->
+	
+	<bean name="provider01" class="acme.entities.roles.Provider">
+		<property name="userAccount">
+			<ref bean="providerUserAccount" />
+		</property>
+		<property name="company" value="Providacme.Inc"></property>
+		<property name="sector" value="Apps"></property>
+	</bean>
+	
+	
+	<bean name="providerUserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="provider" />
+		<property name="password" value="provider" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Provider" />
+				<property name="surname" value="Acme.com" />
+				<property name="email" value="provider@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="providerAuthenticated" />
+			</list>
+		</property>
+	</bean>
+	 
+	<bean name="providerAuthenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="providerUserAccount" />
+	</bean>
 	
 </beans>

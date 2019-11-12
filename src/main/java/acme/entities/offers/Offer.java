@@ -32,7 +32,6 @@ public class Offer extends DomainEntity {
 	@NotBlank
 	private String				title;
 
-	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	@Past
 	private Date				moment;
@@ -53,7 +52,7 @@ public class Offer extends DomainEntity {
 	private Money				maxReward;
 
 	@NotBlank
-	@Pattern(regexp = "^[O][a-zA-Z]{4}[-]\\d{5}$")
+	@Pattern(regexp = "^O[a-zA-Z]{4}[-]\\d{5}$")
 	@Column(unique = true)
 	private String				ticker;
 
