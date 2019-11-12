@@ -43,7 +43,7 @@ public class CompanyRecord extends DomainEntity {
 	private String				web;
 
 	@NotBlank
-	@Pattern(regexp = "^(([+][1-9]{1}[0-9]{0,2}[ ])?)(([(][0-9]{1,4}[)][ ])?)[0-9]{6,10}$")
+	@Pattern(regexp = "^(([+][1-9]{1}[0-9]{0,2}[ ])?)(([(][0-9]{1,4}[)][ ])?)[0-9]{6,10}$", message = "{administrator.companyRecord.error.administratorPhoneFormat")
 	private String				phone;
 
 	@NotBlank

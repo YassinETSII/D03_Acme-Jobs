@@ -61,8 +61,6 @@ public class AdministratorCompanyRecordCreateService implements AbstractCreateSe
 		assert entity != null;
 		assert errors != null;
 
-		Boolean wrongPhonePattern = errors.hasErrors("phone");
-		errors.state(request, !wrongPhonePattern, "phone", "administrator.companyRecord.error.phoneError");
 	}
 
 	@Override

@@ -18,7 +18,7 @@ authenticated.companyRecord.form.label.phone = Número de teléfono:
 authenticated.companyRecord.form.label.email = Email:
 authenticated.companyRecord.form.label.stars = Estrellas:
 authenticated.companyRecord.form.button.return = Volver
-administrator.companyRecord.error.phoneError = El teléfono debe tener el patrón: +999 (9999) 999999
+administrator.companyRecord.error.administratorPhoneFormat = El teléfono debe tener el patrón: +999 (9999) 999999
 
 administrator.companyRecord.form.label.company = Compañía:
 administrator.companyRecord.form.label.sector = Sector:

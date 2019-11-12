@@ -22,7 +22,7 @@ administrator.companyRecord.form.button.create = Create company record
 administrator.companyRecord.form.button.update = Update company record
 administrator.companyRecord.form.button.delete = Delete company record
 administrator.companyRecord.form.button.return = Return
-administrator.companyRecord.error.phoneError = The phone must have the pattern: +999 (9999) 999999
+administrator.companyRecord.error.administratorPhoneFormat = The phone must have the pattern: +999 (9999) 999999
 
 ########################################### Feature: administrator lists company records.
 administrator.companyRecord.list.label.company = Company
