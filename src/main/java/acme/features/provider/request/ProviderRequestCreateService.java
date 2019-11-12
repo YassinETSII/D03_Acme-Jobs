@@ -86,11 +86,6 @@ public class ProviderRequestCreateService implements AbstractCreateService<Provi
 			errors.state(request, acceptedCurrency, "reward", "provider.request.error.currency");
 		}
 
-		/*
-		 * acceptedCurrency = request.getModel().getString("reward.currency").equals("EUR");
-		 * errors.state(request, acceptedCurrency, "reward", "provider.request.error.currency");
-		 */
-
 	}
 
 	@Override
