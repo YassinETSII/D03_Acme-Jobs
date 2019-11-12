@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.roles.Provider;
 import acme.framework.components.Errors;
+import acme.framework.components.HttpMethod;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.services.AbstractCreateService;
@@ -38,6 +39,11 @@ public class ProviderRequestCreateService implements AbstractCreateService<Provi
 
 		request.unbind(entity, model, "title", "deadline", "text", "reward", "ticker");
 
+		if (request.isMethod(HttpMethod.GET)) {
+			model.setAttribute("accept", "false");
+		} else {
+			request.transfer(model, "accept");
+		}
 	}
 
 	@Override
@@ -63,10 +69,27 @@ public class ProviderRequestCreateService implements AbstractCreateService<Provi
 		assert entity != null;
 		assert errors != null;
 
-		boolean tickerDuplicated;
+		boolean tickerDuplicated, isAccepted, acceptedCurrency;
+		String currency;
 
-		tickerDuplicated = this.repository.findOneRequestByTicker(entity.getTicker()) != null;
-		errors.state(request, !tickerDuplicated, "ticker", "provider.request.error.duplicated");
+		if (!errors.hasErrors("ticker")) { //Check if ticker has no errors
+			tickerDuplicated = this.repository.findOneRequestByTicker(entity.getTicker()) != null;
+			errors.state(request, !tickerDuplicated, "ticker", "provider.request.error.duplicated");
+		}
+
+		isAccepted = request.getModel().getBoolean("accept");
+		errors.state(request, isAccepted, "accept", "provider.request.error.must-accept");
+
+		if (!errors.hasErrors("reward")) { //Check if reward has no errors
+			currency = entity.getReward().getCurrency();
+			acceptedCurrency = currency.equals("EUR");
+			errors.state(request, acceptedCurrency, "reward", "provider.request.error.currency");
+		}
+
+		/*
+		 * acceptedCurrency = request.getModel().getString("reward.currency").equals("EUR");
+		 * errors.state(request, acceptedCurrency, "reward", "provider.request.error.currency");
+		 */
 
 	}
 

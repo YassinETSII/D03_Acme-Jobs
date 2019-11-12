@@ -1,7 +1,6 @@
 
 package acme.entities.companyRecords;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Max;
@@ -45,7 +44,6 @@ public class CompanyRecord extends DomainEntity {
 
 	@NotBlank
 	@Pattern(regexp = "^(([+][1-9]{1}[0-9]{0,2}[ ])?)(([(][0-9]{1,4}[)][ ])?)[0-9]{6,10}$")
-	@Column(unique = true)
 	private String				phone;
 
 	@NotBlank

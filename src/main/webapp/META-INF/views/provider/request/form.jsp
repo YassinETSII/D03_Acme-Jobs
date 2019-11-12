@@ -22,6 +22,8 @@
 	<acme:form-money code="provider.request.label.reward" path="reward"/>
 	<acme:form-textbox code="provider.request.label.ticker" path="ticker"/>
 	 	
+	 <acme:form-checkbox code="provider.request.label.accept" path="accept"/>
+	 	
 	<acme:form-submit code="provider.request.button.create" action="/provider/request/create"/>
   	<acme:form-return code="provider.request.button.return"/>
 </acme:form>
