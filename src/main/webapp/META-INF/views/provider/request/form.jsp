@@ -20,7 +20,7 @@
 	<acme:form-moment code="provider.request.label.deadline" path="deadline"/>
 	<acme:form-textarea code="provider.request.label.text" path="text"/>
 	<acme:form-money code="provider.request.label.reward" path="reward"/>
-	<acme:form-textbox code="provider.request.label.ticker" path="ticker"/>
+	<acme:form-textbox code="provider.request.label.ticker" path="ticker" placeholder="RXXXX-99999"/>
 	 	
 	 <acme:form-checkbox code="provider.request.label.accept" path="accept"/>
 	 	

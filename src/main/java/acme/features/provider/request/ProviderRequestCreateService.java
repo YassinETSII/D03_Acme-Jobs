@@ -82,7 +82,7 @@ public class ProviderRequestCreateService implements AbstractCreateService<Provi
 
 		if (!errors.hasErrors("reward")) { //Check if reward has no errors
 			currency = entity.getReward().getCurrency();
-			acceptedCurrency = currency.equals("EUR");
+			acceptedCurrency = currency.equals("EUR") || currency.equals("€");
 			errors.state(request, acceptedCurrency, "reward", "provider.request.error.currency");
 		}
 
