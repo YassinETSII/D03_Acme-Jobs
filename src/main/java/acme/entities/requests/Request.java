@@ -48,7 +48,7 @@ public class Request extends DomainEntity {
 	private Money				reward;
 
 	@NotBlank
-	@Pattern(regexp = "^R[a-zA-Z]{4}[-]\\d{5}$", message = "{provider.request.error.tickerFormat}")
+	@Pattern(regexp = "^R[a-zA-Z]{4}[-]\\d{5}$", message = "{provider.request.error.providertickerFormat}")
 	@Column(unique = true)
 	private String				ticker;
 

@@ -19,7 +19,7 @@ provider.request.button.create = Crear solicitud
 provider.request.button.return = Volver
 
 provider.request.label.accept = Acepto crear esta solicitud
-provider.request.error.tickerFormat = Debe encajar en el patrón RXXXX-99999
+provider.request.error.providertickerFormat = Debe encajar en el patrón RXXXX-99999
 provider.request.error.must-accept = Debe marcar la casilla
 provider.request.error.currency = La moneda debe estar en EUR
 

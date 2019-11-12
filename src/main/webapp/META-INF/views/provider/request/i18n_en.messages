@@ -19,7 +19,7 @@ provider.request.button.create = Create request
 provider.request.button.return = Return
 
 provider.request.label.accept = I do accept create this request
-provider.request.error.tickerFormat = Must match pattern RXXXX-99999
+provider.request.error.providertickerFormat = Must match pattern RXXXX-99999
 provider.request.error.must-accept = Must check the box
 provider.request.error.currency = Currency must be in EUR
 
