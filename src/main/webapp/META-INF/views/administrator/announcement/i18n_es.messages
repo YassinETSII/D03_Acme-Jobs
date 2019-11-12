@@ -15,6 +15,10 @@ administrator.announcement.form.label.moreInfo = Más info:
 administrator.announcement.form.label.text = Texto:
 administrator.announcement.form.button.return = Volver
 
+administrator.announcement.form.button.update = Actualizar
+administrator.announcement.form.button.delete = Borrar
+administrator.announcement.form.button.create = Crear
+
 ########################################### Feature: administrador lista anuncios.
 administrator.announcement.list.label.moment = Momento de creación
 administrator.announcement.list.label.title = Título
