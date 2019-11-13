@@ -21,6 +21,6 @@ provider.request.button.return = Volver
 provider.request.label.accept = Acepto crear esta solicitud
 provider.request.error.providerTickerFormat = Debe encajar en el patrón RXXXX-99999
 provider.request.error.must-accept = Debe marcar la casilla
-provider.request.error.currency = La moneda debe estar en EUR
+provider.request.error.currency = La moneda debe ser EUR
 
-provider.request.error.duplicated = Este ticker ya está en uso
+provider.request.error.tickerDuplicated = Este ticker ya está en uso

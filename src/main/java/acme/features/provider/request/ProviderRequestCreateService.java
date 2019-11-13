@@ -74,7 +74,7 @@ public class ProviderRequestCreateService implements AbstractCreateService<Provi
 
 		if (!errors.hasErrors("ticker")) { //Check if ticker has no errors
 			tickerDuplicated = this.repository.findOneRequestByTicker(entity.getTicker()) != null;
-			errors.state(request, !tickerDuplicated, "ticker", "provider.request.error.duplicated");
+			errors.state(request, !tickerDuplicated, "ticker", "provider.request.error.tickerDuplicated");
 		}
 
 		isAccepted = request.getModel().getBoolean("accept");
@@ -82,7 +82,7 @@ public class ProviderRequestCreateService implements AbstractCreateService<Provi
 
 		if (!errors.hasErrors("reward")) { //Check if reward has no errors
 			currency = entity.getReward().getCurrency();
-			acceptedCurrency = currency.equals("EUR") || currency.equals("€");
+			acceptedCurrency = currency.equals("EUR");
 			errors.state(request, acceptedCurrency, "reward", "provider.request.error.currency");
 		}
 
