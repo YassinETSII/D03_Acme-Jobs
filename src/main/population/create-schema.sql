@@ -202,9 +202,6 @@
 
     insert into `hibernate_sequence` values ( 1 );
 
-    alter table `company_record` 
-       add constraint UK_ssc7d0vl7xqysfq2gp9hryv61 unique (`phone`);
-
     alter table `offer` 
        add constraint UK_iex7e8fs0fh89yxpcnm1orjkm unique (`ticker`);
 
