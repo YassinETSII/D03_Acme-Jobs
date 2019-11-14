@@ -23,7 +23,7 @@
 	<acme:form-url code="anonymous.companyRecord.form.label.web" path="web"/>
 	<acme:form-textbox code="anonymous.companyRecord.form.label.phone" path="phone"/>
 	<acme:form-textbox code="anonymous.companyRecord.form.label.email" path="email"/>
-	<acme:form-integer code="anonymous.companyRecord.form.label.stars" path="stars"/>
+	<acme:form-integer code="anonymous.companyRecord.form.label.stars" path="stars" placeholder="3"/>
 	
 	<acme:form-return code="anonymous.companyRecord.form.button.return"/>
 </acme:form>

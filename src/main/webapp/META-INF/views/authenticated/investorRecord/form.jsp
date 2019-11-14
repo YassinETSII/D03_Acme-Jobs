@@ -19,7 +19,7 @@
 	<acme:form-textbox code="authenticated.investorRecord.form.label.investor" path="investor"/>
 	<acme:form-textbox code="authenticated.investorRecord.form.label.sector" path="sector"/>
 	<acme:form-textarea code="authenticated.investorRecord.form.label.statement" path="statement"/>
-	<acme:form-integer code="authenticated.investorRecord.form.label.stars" path="stars"/>
+	<acme:form-integer code="authenticated.investorRecord.form.label.stars" path="stars" placeholder="3"/>
 	
 	<acme:form-return code="authenticated.investorRecord.form.button.return"/>
 </acme:form>
