@@ -4,7 +4,7 @@ package acme.features.authenticated.offer;
 import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
-import java.util.TimeZone;
+import java.util.GregorianCalendar;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -46,7 +46,7 @@ public class AuthenticatedOfferListService implements AbstractListService<Authen
 	public Collection<Offer> findMany(final Request<Offer> request) {
 		assert request != null;
 
-		Calendar c = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+		Calendar c = new GregorianCalendar();
 		Date d = c.getTime();
 
 		Collection<Offer> result;
