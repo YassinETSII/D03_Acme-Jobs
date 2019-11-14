@@ -1,7 +1,10 @@
 
 package acme.features.authenticated.challenge;
 
+import java.util.Calendar;
 import java.util.Collection;
+import java.util.Date;
+import java.util.TimeZone;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -43,8 +46,11 @@ public class AuthenticatedChallengeListService implements AbstractListService<Au
 	public Collection<Challenge> findMany(final Request<Challenge> request) {
 		assert request != null;
 
+		Calendar c = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+		Date d = c.getTime();
+
 		Collection<Challenge> result;
-		result = this.repository.findManyAll();
+		result = this.repository.findManyAll(d);
 
 		return result;
 

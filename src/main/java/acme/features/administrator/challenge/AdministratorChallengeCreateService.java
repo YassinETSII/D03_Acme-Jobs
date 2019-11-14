@@ -60,6 +60,39 @@ public class AdministratorChallengeCreateService implements AbstractCreateServic
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+
+		//TODO:validar campos
+		//deadline último
+
+		boolean acceptedBronzeCurrency, acceptedSilverCurrency, acceptedGoldCurrency, sequentialRangeAmount;
+		String bronzeCurrency, silverCurrency, goldCurrency;
+		Double bronzeAmount, silverAmount, goldAmount;
+
+		if (!errors.hasErrors("goldReward")) { //Check if goldReward has no errors
+			goldCurrency = entity.getGoldReward().getCurrency();
+			acceptedGoldCurrency = goldCurrency.equals("EUR");
+			errors.state(request, acceptedGoldCurrency, "goldReward", "administrator.challenge.error.goldCurrency");
+		}
+
+		if (!errors.hasErrors("silverReward")) { //Check if silverReward has no errors
+			silverCurrency = entity.getSilverReward().getCurrency();
+			acceptedSilverCurrency = silverCurrency.equals("EUR");
+			errors.state(request, acceptedSilverCurrency, "silverReward", "administrator.challenge.error.silverCurrency");
+		}
+
+		if (!errors.hasErrors("bronzeReward")) { //Check if bronzeReward has no errors
+			bronzeCurrency = entity.getBronzeReward().getCurrency();
+			acceptedBronzeCurrency = bronzeCurrency.equals("EUR");
+			errors.state(request, acceptedBronzeCurrency, "bronzeReward", "administrator.challenge.error.bronzeCurrency");
+		}
+
+		//Check if ranges of rewards are sequential
+		if (!errors.hasErrors("bronzeReward")) { //Check if bronzeReward has no errors
+			bronzeAmount = entity.getBronzeReward().getAmount();
+			silverAmount = entity.getSilverReward().getAmount();
+			sequentialRangeAmount = bronzeAmount < silverAmount;
+			errors.state(request, sequentialRangeAmount, "bronzeReward", "administrator.challenge.error.rangeAmount");
+		}
 	}
 
 	@Override
