@@ -12,9 +12,12 @@
 anonymous.laljbulletin.form.label.event = Event:
 anonymous.laljbulletin.form.label.momentOfEvent = Moment of event:
 anonymous.laljbulletin.form.label.location = Location:
-anonymous.laljbulletin.form.label.euros = Euros:
+anonymous.laljbulletin.form.label.cost = Cost:
 anonymous.laljbulletin.form.button.create = Create this bulletin
 anonymous.laljbulletin.form.button.return = Return
+
+anonymous.laljbulletin.error.momentOfEvent = The moment of the event must be in future
+anonymous.laljbulletin.error.currency = Currency must be EUR
 
 anonymous.laljbulletin.form.initialMessage = \
 	In this form you can create an informative bulletin about \
@@ -24,7 +27,7 @@ anonymous.laljbulletin.form.initialMessage = \
 anonymous.laljbulletin.list.label.event = Event
 anonymous.laljbulletin.list.label.momentOfEvent = Moment of event
 anonymous.laljbulletin.list.label.location = Location
-anonymous.laljbulletin.list.label.euros = Euros
+anonymous.laljbulletin.list.label.cost = Cost
 
 anonymous.laljbulletin.list.initialMessage = \
 	Here is the list of bulletins about events \

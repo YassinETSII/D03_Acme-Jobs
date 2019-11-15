@@ -4,7 +4,7 @@ package acme.features.authenticated.announcement;
 import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
-import java.util.TimeZone;
+import java.util.GregorianCalendar;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -46,12 +46,15 @@ public class AuthenticatedAnnouncementListService implements AbstractListService
 	public Collection<Announcement> findMany(final Request<Announcement> request) {
 		assert request != null;
 
-		Calendar c = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
-		c.add(Calendar.MONTH, -1);
-		Date d = c.getTime();
+		Calendar c1 = new GregorianCalendar();
+		c1.add(Calendar.MONTH, -1);
+		Date d1 = c1.getTime();
+
+		Calendar c2 = new GregorianCalendar();
+		Date d2 = c2.getTime();
 
 		Collection<Announcement> result;
-		result = this.repository.findManyAll(d);
+		result = this.repository.findManyAll(d1, d2);
 
 		return result;
 

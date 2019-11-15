@@ -19,7 +19,7 @@
 	<acme:form-textbox code="anonymous.investorRecord.form.label.investor" path="investor"/>
 	<acme:form-textbox code="anonymous.investorRecord.form.label.sector" path="sector"/>
 	<acme:form-textarea code="anonymous.investorRecord.form.label.statement" path="statement"/>
-	<acme:form-integer code="anonymous.investorRecord.form.label.stars" path="stars"/>
+	<acme:form-integer code="anonymous.investorRecord.form.label.stars" path="stars" placeholder="3"/>
 	
 	<acme:form-return code="anonymous.investorRecord.form.button.return"/>
 </acme:form>

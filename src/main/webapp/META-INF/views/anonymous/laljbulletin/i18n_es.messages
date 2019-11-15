@@ -12,9 +12,12 @@
 anonymous.laljbulletin.form.label.event = Evento:
 anonymous.laljbulletin.form.label.momentOfEvent = Fecha y hora del evento:
 anonymous.laljbulletin.form.label.location = Localización:
-anonymous.laljbulletin.form.label.euros = Euros:
+anonymous.laljbulletin.form.label.cost = Coste:
 anonymous.laljbulletin.form.button.create = Crear este boletin
 anonymous.laljbulletin.form.button.return = Volver
+
+anonymous.laljbulletin.error.momentOfEvent = El momento del evento debe estar en el futuro
+anonymous.laljbulletin.error.currency = La moneda debe ser EUR
 
 anonymous.laljbulletin.form.initialMessage = \
 	En este formulario puede crear un boletín informativo sobre \
@@ -22,9 +25,9 @@ anonymous.laljbulletin.form.initialMessage = \
 
 ########################################### Feature: anonimo lista boletines (Yassin Lalj).
 anonymous.laljbulletin.list.label.event = Evento
-anonymous.laljbulletin.list.label.momentOfEvent = Fecha y hora del evento
+anonymous.laljbulletin.list.label.momentOfEvent = Momento del evento
 anonymous.laljbulletin.list.label.location = Localización
-anonymous.laljbulletin.list.label.euros = Euros
+anonymous.laljbulletin.list.label.cost = Coste
 
 anonymous.laljbulletin.list.initialMessage = \
 	Aquí está la lista de boletines sobre eventos \

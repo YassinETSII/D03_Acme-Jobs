@@ -23,5 +23,5 @@
 	<acme:list-column code="anonymous.laljbulletin.list.label.event" path="event" width="20%"/>
 	<acme:list-column code="anonymous.laljbulletin.list.label.momentOfEvent" path="momentOfEvent" width="20%"/>
 	<acme:list-column code="anonymous.laljbulletin.list.label.location" path="location" width="20%"/>
-	<acme:list-column code="anonymous.laljbulletin.list.label.euros" path="euros" width="20%"/>
+	<acme:list-column code="anonymous.laljbulletin.list.label.cost" path="cost" width="20%"/>
 </acme:list>

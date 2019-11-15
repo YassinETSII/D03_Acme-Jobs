@@ -6,7 +6,6 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.URL;
@@ -43,14 +42,13 @@ public class CompanyRecord extends DomainEntity {
 	private String				web;
 
 	@NotBlank
-	@Pattern(regexp = "^(([+][1-9]{1}[0-9]{0,2}[ ])?)(([(][0-9]{1,4}[)][ ])?)[0-9]{6,10}$")
+	@Pattern(regexp = "^(([+][1-9]{1}[0-9]{0,2}[ ])?)(([(][0-9]{1,4}[)][ ])?)[0-9]{6,10}$", message = "{administrator.companyRecord.error.administratorPhoneFormat}")
 	private String				phone;
 
 	@NotBlank
 	@Email
 	private String				email;
 
-	@NotNull
 	private Boolean				incorporated;
 
 	@Min(0)
