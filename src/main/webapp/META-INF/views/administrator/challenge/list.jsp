@@ -15,13 +15,7 @@
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
-<div class="jumbotron">
-	<acme:message code="anonymous.laljbulletin.list.initialMessage"/>
-</div>
-
-<acme:list readonly="true">
-	<acme:list-column code="anonymous.laljbulletin.list.label.event" path="event" width="20%"/>
-	<acme:list-column code="anonymous.laljbulletin.list.label.momentOfEvent" path="momentOfEvent" width="20%"/>
-	<acme:list-column code="anonymous.laljbulletin.list.label.location" path="location" width="20%"/>
-	<acme:list-column code="anonymous.laljbulletin.list.label.cost" path="cost" width="20%"/>
+<acme:list>
+	<acme:list-column code="administrator.challenge.list.label.deadline" path="deadline" width="20%"/>
+	<acme:list-column code="administrator.challenge.list.label.title" path="title" width="20%"/>
 </acme:list>

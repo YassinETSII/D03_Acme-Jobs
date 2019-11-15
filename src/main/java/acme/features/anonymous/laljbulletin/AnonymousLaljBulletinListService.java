@@ -1,7 +1,10 @@
 
 package acme.features.anonymous.laljbulletin;
 
+import java.util.Calendar;
 import java.util.Collection;
+import java.util.Date;
+import java.util.GregorianCalendar;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -37,15 +40,18 @@ public class AnonymousLaljBulletinListService implements AbstractListService<Ano
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "event", "momentOfEvent", "location", "euros");
+		request.unbind(entity, model, "event", "momentOfEvent", "location", "cost");
 	}
 
 	@Override
 	public Collection<LaljBulletin> findMany(final Request<LaljBulletin> request) {
 		assert request != null;
 
+		Calendar c = new GregorianCalendar();
+		Date d = c.getTime();
+
 		Collection<LaljBulletin> result;
-		result = this.repository.findMany();
+		result = this.repository.findMany(d);
 
 		return result;
 	}

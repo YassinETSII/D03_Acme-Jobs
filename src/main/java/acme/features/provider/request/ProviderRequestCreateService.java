@@ -1,7 +1,9 @@
 
 package acme.features.provider.request;
 
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -69,8 +71,18 @@ public class ProviderRequestCreateService implements AbstractCreateService<Provi
 		assert entity != null;
 		assert errors != null;
 
-		boolean tickerDuplicated, isAccepted, acceptedCurrency;
+		boolean tickerDuplicated, isAccepted, acceptedCurrency, activeDeadline;
 		String currency;
+		Calendar calendar;
+		Date deadlineMoment, currentMoment;
+
+		if (!errors.hasErrors("deadline")) { //Check if deadline has no errors
+			deadlineMoment = entity.getDeadline();
+			calendar = new GregorianCalendar();
+			currentMoment = calendar.getTime();
+			activeDeadline = deadlineMoment.after(currentMoment);
+			errors.state(request, activeDeadline, "deadline", "provider.request.error.deadline");
+		}
 
 		if (!errors.hasErrors("ticker")) { //Check if ticker has no errors
 			tickerDuplicated = this.repository.findOneRequestByTicker(entity.getTicker()) != null;

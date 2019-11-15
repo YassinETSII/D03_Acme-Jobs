@@ -1,6 +1,10 @@
 
 package acme.features.administrator.challenge;
 
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -52,6 +56,54 @@ public class AdministratorChallengeUpdateService implements AbstractUpdateServic
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+
+		boolean acceptedBronzeCurrency, acceptedSilverCurrency, acceptedGoldCurrency, sequentialRangeAmountBronze, sequentialRangeAmountSilver, activeDeadline;
+		String bronzeCurrency, silverCurrency, goldCurrency;
+		Double bronzeAmount, silverAmount, goldAmount;
+		Calendar calendar;
+		Date deadlineMoment, currentMoment;
+
+		if (!errors.hasErrors("deadline")) { //Check if deadline has no errors
+			deadlineMoment = entity.getDeadline();
+			calendar = new GregorianCalendar();
+			currentMoment = calendar.getTime();
+			activeDeadline = deadlineMoment.after(currentMoment);
+			errors.state(request, activeDeadline, "deadline", "administrator.challenge.error.deadline");
+		}
+
+		if (!errors.hasErrors("goldReward")) { //Check if goldReward has no errors
+			goldCurrency = entity.getGoldReward().getCurrency();
+			acceptedGoldCurrency = goldCurrency.equals("EUR");
+			errors.state(request, acceptedGoldCurrency, "goldReward", "administrator.challenge.error.goldCurrency");
+		}
+
+		if (!errors.hasErrors("silverReward")) { //Check if silverReward has no errors
+			silverCurrency = entity.getSilverReward().getCurrency();
+			acceptedSilverCurrency = silverCurrency.equals("EUR");
+			errors.state(request, acceptedSilverCurrency, "silverReward", "administrator.challenge.error.silverCurrency");
+		}
+
+		if (!errors.hasErrors("bronzeReward")) { //Check if bronzeReward has no errors
+			bronzeCurrency = entity.getBronzeReward().getCurrency();
+			acceptedBronzeCurrency = bronzeCurrency.equals("EUR");
+			errors.state(request, acceptedBronzeCurrency, "bronzeReward", "administrator.challenge.error.bronzeCurrency");
+		}
+
+		//Check if ranges of rewards are sequential
+		if (!errors.hasErrors("bronzeReward") && !errors.hasErrors("silverReward") && !errors.hasErrors("goldReward")) { //Check if rewards have no errors
+			bronzeAmount = entity.getBronzeReward().getAmount();
+			silverAmount = entity.getSilverReward().getAmount();
+			goldAmount = entity.getSilverReward().getAmount();
+			sequentialRangeAmountBronze = bronzeAmount < silverAmount && bronzeAmount < goldAmount;
+			errors.state(request, sequentialRangeAmountBronze, "bronzeReward", "administrator.challenge.error.rangeAmountBronze");
+		}
+
+		if (!errors.hasErrors("silverReward") && !errors.hasErrors("goldReward")) { //Check if rewards have no errors
+			silverAmount = entity.getSilverReward().getAmount();
+			goldAmount = entity.getGoldReward().getAmount();
+			sequentialRangeAmountSilver = silverAmount < goldAmount;
+			errors.state(request, sequentialRangeAmountSilver, "silverReward", "administrator.challenge.error.rangeAmountSilver");
+		}
 	}
 
 	@Override

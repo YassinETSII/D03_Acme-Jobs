@@ -1,7 +1,9 @@
 
 package acme.features.consumer.offer;
 
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -70,9 +72,19 @@ public class ConsumerOfferCreateService implements AbstractCreateService<Consume
 		assert entity != null;
 		assert errors != null;
 
-		boolean tickerDuplicated, isAccepted, acceptedMinCurrency, acceptedMaxCurrency, sequentialRangeAmount;
+		boolean tickerDuplicated, isAccepted, acceptedMinCurrency, acceptedMaxCurrency, sequentialRangeAmount, activeDeadline;
 		String minCurrency, maxCurrency;
 		Double minAmount, maxAmount;
+		Calendar calendar;
+		Date deadlineMoment, currentMoment;
+
+		if (!errors.hasErrors("deadline")) { //Check if deadline has no errors
+			deadlineMoment = entity.getDeadline();
+			calendar = new GregorianCalendar();
+			currentMoment = calendar.getTime();
+			activeDeadline = deadlineMoment.after(currentMoment);
+			errors.state(request, activeDeadline, "deadline", "consumer.offer.error.deadline");
+		}
 
 		if (!errors.hasErrors("ticker")) { //Check if ticker has no errors
 			tickerDuplicated = this.repository.findOneOfferByTicker(entity.getTicker()) != null;
@@ -95,7 +107,7 @@ public class ConsumerOfferCreateService implements AbstractCreateService<Consume
 		}
 
 		//Check if range of rewards is sequential
-		if (!errors.hasErrors("minReward")) { //Check if minReward has no errors
+		if (!errors.hasErrors("minReward") && !errors.hasErrors("maxReward")) { //Check if rewards have no errors
 			minAmount = entity.getMinReward().getAmount();
 			maxAmount = entity.getMaxReward().getAmount();
 			sequentialRangeAmount = minAmount < maxAmount;

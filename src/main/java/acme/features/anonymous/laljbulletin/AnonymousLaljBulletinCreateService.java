@@ -1,7 +1,9 @@
 
 package acme.features.anonymous.laljbulletin;
 
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,13 +38,7 @@ public class AnonymousLaljBulletinCreateService implements AbstractCreateService
 		assert request != null;
 
 		LaljBulletin result;
-		Date moment = new Date(120, 3, 20, 21, 30);
-
 		result = new LaljBulletin();
-		result.setEvent("Going to Aquiarum from La Palmera");
-		result.setMomentOfEvent(moment);
-		result.setLocation("La Palmera");
-		result.setEuros(12.);
 		return result;
 	}
 
@@ -52,7 +48,7 @@ public class AnonymousLaljBulletinCreateService implements AbstractCreateService
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "event", "momentOfEvent", "location", "euros");
+		request.unbind(entity, model, "event", "momentOfEvent", "location", "cost");
 	}
 
 	@Override
@@ -69,6 +65,25 @@ public class AnonymousLaljBulletinCreateService implements AbstractCreateService
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+
+		boolean eventInFuture, acceptedCurrency;
+		Calendar calendar;
+		Date momentEv, currentMoment;
+		String currency;
+
+		if (!errors.hasErrors("momentOfEvent")) { //Check if momentOfEvent has no errors
+			momentEv = entity.getMomentOfEvent();
+			calendar = new GregorianCalendar();
+			currentMoment = calendar.getTime();
+			eventInFuture = momentEv.after(currentMoment);
+			errors.state(request, eventInFuture, "momentOfEvent", "anonymous.laljbulletin.error.momentOfEvent");
+		}
+
+		if (!errors.hasErrors("cost")) { //Check if cost has no errors
+			currency = entity.getCost().getCurrency();
+			acceptedCurrency = currency.equals("EUR");
+			errors.state(request, acceptedCurrency, "cost", "anonymous.laljbulletin.error.currency");
+		}
 	}
 
 	@Override

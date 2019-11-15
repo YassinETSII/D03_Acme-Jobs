@@ -1,6 +1,10 @@
 
 package acme.features.administrator.challenge;
 
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -61,12 +65,19 @@ public class AdministratorChallengeCreateService implements AbstractCreateServic
 		assert entity != null;
 		assert errors != null;
 
-		//TODO:validar campos
-		//deadline último
-
-		boolean acceptedBronzeCurrency, acceptedSilverCurrency, acceptedGoldCurrency, sequentialRangeAmount;
+		boolean acceptedBronzeCurrency, acceptedSilverCurrency, acceptedGoldCurrency, sequentialRangeAmountBronze, sequentialRangeAmountSilver, activeDeadline;
 		String bronzeCurrency, silverCurrency, goldCurrency;
 		Double bronzeAmount, silverAmount, goldAmount;
+		Calendar calendar;
+		Date deadlineMoment, currentMoment;
+
+		if (!errors.hasErrors("deadline")) { //Check if deadline has no errors
+			deadlineMoment = entity.getDeadline();
+			calendar = new GregorianCalendar();
+			currentMoment = calendar.getTime();
+			activeDeadline = deadlineMoment.after(currentMoment);
+			errors.state(request, activeDeadline, "deadline", "administrator.challenge.error.deadline");
+		}
 
 		if (!errors.hasErrors("goldReward")) { //Check if goldReward has no errors
 			goldCurrency = entity.getGoldReward().getCurrency();
@@ -87,11 +98,19 @@ public class AdministratorChallengeCreateService implements AbstractCreateServic
 		}
 
 		//Check if ranges of rewards are sequential
-		if (!errors.hasErrors("bronzeReward")) { //Check if bronzeReward has no errors
+		if (!errors.hasErrors("bronzeReward") && !errors.hasErrors("silverReward") && !errors.hasErrors("goldReward")) { //Check if rewards have no errors
 			bronzeAmount = entity.getBronzeReward().getAmount();
 			silverAmount = entity.getSilverReward().getAmount();
-			sequentialRangeAmount = bronzeAmount < silverAmount;
-			errors.state(request, sequentialRangeAmount, "bronzeReward", "administrator.challenge.error.rangeAmount");
+			goldAmount = entity.getSilverReward().getAmount();
+			sequentialRangeAmountBronze = bronzeAmount < silverAmount && bronzeAmount < goldAmount;
+			errors.state(request, sequentialRangeAmountBronze, "bronzeReward", "administrator.challenge.error.rangeAmountBronze");
+		}
+
+		if (!errors.hasErrors("silverReward") && !errors.hasErrors("goldReward")) { //Check if rewards have no errors
+			silverAmount = entity.getSilverReward().getAmount();
+			goldAmount = entity.getGoldReward().getAmount();
+			sequentialRangeAmountSilver = silverAmount < goldAmount;
+			errors.state(request, sequentialRangeAmountSilver, "silverReward", "administrator.challenge.error.rangeAmountSilver");
 		}
 	}
 

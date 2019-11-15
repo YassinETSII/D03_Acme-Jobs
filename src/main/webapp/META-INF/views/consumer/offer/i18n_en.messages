@@ -21,6 +21,7 @@ consumer.offer.button.return = Return
 
 consumer.offer.label.accept = I do accept create this offer
 
+consumer.offer.error.deadline = Deadline must be in future
 consumer.offer.error.consumerTickerFormat = Must match pattern OXXXX-99999
 consumer.offer.error.tickerDuplicated = This ticker is already in use
 consumer.offer.error.must-accept = Must check the box

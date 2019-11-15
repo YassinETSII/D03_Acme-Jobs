@@ -112,7 +112,8 @@
     create table `lalj_bulletin` (
        `id` integer not null,
         `version` integer not null,
-        `euros` double precision,
+        `cost_amount` double precision,
+        `cost_currency` varchar(255),
         `event` varchar(255),
         `location` varchar(255),
         `moment_of_event` datetime(6),
