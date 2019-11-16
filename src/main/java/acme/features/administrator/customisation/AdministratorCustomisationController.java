@@ -19,7 +19,11 @@ public class AdministratorCustomisationController extends AbstractController<Adm
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private AdministratorCustomisationListService listService;
+	private AdministratorCustomisationListService	listService;
+	@Autowired
+	private AdministratorCustomisationShowService	showService;
+	@Autowired
+	private AdministratorCustomisationUpdateService	updateService;
 
 
 	// Constructors -----------------------------------------------------------
@@ -27,5 +31,7 @@ public class AdministratorCustomisationController extends AbstractController<Adm
 	@PostConstruct
 	private void initialise() {
 		super.addBasicCommand(BasicCommand.LIST, this.listService);
+		super.addBasicCommand(BasicCommand.SHOW, this.showService);
+		super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
 	}
 }
