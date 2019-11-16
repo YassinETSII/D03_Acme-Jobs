@@ -12,6 +12,7 @@ import acme.entities.bulletins.LaljBulletin;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
+import acme.framework.datatypes.Money;
 import acme.framework.entities.Anonymous;
 import acme.framework.services.AbstractCreateService;
 
@@ -38,7 +39,16 @@ public class AnonymousLaljBulletinCreateService implements AbstractCreateService
 		assert request != null;
 
 		LaljBulletin result;
+		Date moment = new Date(120, 6, 21, 12, 30);
+		Money money = new Money();
+		money.setAmount(12.);
+		money.setCurrency("EUR");
 		result = new LaljBulletin();
+
+		result.setEvent("Visit Giralda");
+		result.setMomentOfEvent(moment);
+		result.setLocation("Puerta Jerez");
+		result.setCost(money);
 		return result;
 	}
 

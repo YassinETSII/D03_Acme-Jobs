@@ -16,7 +16,7 @@ consumer.offer.label.minReward = Recompensa mínima:
 consumer.offer.label.maxReward = Recompensa máxima:
 consumer.offer.label.ticker = Ticker:
 
-consumer.offer.button.create = Crear solicitud
+consumer.offer.button.create = Crear oferta
 consumer.offer.button.return = Volver
 
 consumer.offer.label.accept = Acepto crear esta oferta
