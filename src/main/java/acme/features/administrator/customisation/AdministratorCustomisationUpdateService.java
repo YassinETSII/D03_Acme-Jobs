@@ -1,6 +1,9 @@
 
 package acme.features.administrator.customisation;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -52,6 +55,19 @@ public class AdministratorCustomisationUpdateService implements AbstractUpdateSe
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+
+		//Check that a repeated spam word is not entered
+		if (!errors.hasErrors("spamWords")) { //Check if spamWords has no errors
+			Set<String> duplicates = new HashSet<>();
+			String[] words = entity.getSpamWords().split("\\s*,\\s*");
+			Set<String> set = new HashSet<>();
+			for (String word : words) {
+				if (!set.add(word)) {
+					duplicates.add(word);
+				}
+			}
+			errors.state(request, duplicates.isEmpty(), "spamWords", "administrator.customisation.error.existingWord");
+		}
 	}
 
 	@Override

@@ -16,5 +16,7 @@ administrator.customisation.list.label.spamThreshold = Spam threshold in percent
 administrator.customisation.form.label.spamWords = Spam words:
 administrator.customisation.form.label.spamThreshold = Spam threshold in percent:
 
+administrator.customisation.error.existingWord = The spam word you are trying to enter already exists
+
 administrator.customisation.form.button.update = Update parameters
 administrator.customisation.form.button.return = Return
