@@ -1,0 +1,23 @@
+# i18n_en.messages
+#
+# Copyright (c) 2019 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+########################################### Feature: administrator shows a commercial banner.
+administrator.commercialBanner.form.label.picture = Picture:
+administrator.commercialBanner.form.label.slogan = Slogan:
+administrator.commercialBanner.form.label.url = URL:
+administrator.commercialBanner.form.label.creditCard = Credit Card:
+administrator.commercialBanner.form.button.create = Create commercial banner
+administrator.commercialBanner.form.button.update = Update commercial banner
+administrator.commercialBanner.form.button.delete = Delete commercial banner
+administrator.commercialBanner.form.button.return = Return
+
+########################################### Feature: administrator lists commercial banners.
+administrator.commercialBanner.list.label.slogan = Slogan
+administrator.commercialBanner.list.label.url = URL

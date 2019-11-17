@@ -8,7 +8,7 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-########################################### Feature: autenticado muestra un registro de compañía.
+########################################### Feature: administrador muestra un registro de compañía.
 administrator.companyRecord.form.label.company = Compañía:
 administrator.companyRecord.form.label.sector = Sector:
 administrator.companyRecord.form.label.ceo = CEO:
@@ -24,6 +24,6 @@ administrator.companyRecord.form.button.delete = Borrar registro de compañía
 administrator.companyRecord.form.button.return = Volver
 administrator.companyRecord.error.administratorPhoneFormat = El teléfono debe tener el patrón: +999 (9999) 999999
 
-########################################### Feature: autenticado lista registros de compañías.
+########################################### Feature: administrador lista registros de compañías.
 administrator.companyRecord.list.label.company = Compañía
 administrator.companyRecord.list.label.sector = Sector

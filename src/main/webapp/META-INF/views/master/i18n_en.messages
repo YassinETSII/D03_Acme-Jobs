@@ -39,7 +39,8 @@ master.menu.authenticated.challenge.list = List challenges
 
 # master.menu.anonymous #######################################################
 
-master.menu.anonymous = Anonymous
+master.menu.anonymous.panel1 = Anonymous Panel 1
+master.menu.anonymous.panel2 = Anonymous Panel 2
 master.menu.anonymous.favourite-link1 = Yassin's link 
 master.menu.anonymous.favourite-link2 = Alfonso's link
 master.menu.anonymous.shout.list = List shouts
@@ -56,7 +57,8 @@ master.menu.anonymous.investorRecord.listTop = List top investor records
 
 # master.menu.administrator ###################################################
 
-master.menu.administrator = Administrator
+master.menu.administrator.panel1 = Administrator Panel 1
+master.menu.administrator.panel2 = Administrator Panel 2
 master.menu.administrator.customisation.list = Customisation
 master.menu.administrator.user-accounts = User accounts
 master.menu.administrator.announcement.list = List announcements
@@ -65,6 +67,10 @@ master.menu.administrator.companyRecord.list = List company records
 master.menu.administrator.companyRecord.create = Create company record
 master.menu.administrator.investorRecord.list = List investor records
 master.menu.administrator.investorRecord.create = Create investor record
+master.menu.administrator.commercialBanner.list = List commercial banners
+master.menu.administrator.commercialBanner.create = Create commercial banner
+master.menu.administrator.nonCommercialBanner.list = List non commercial banners
+master.menu.administrator.nonCommercialBanner.create = Create non commercial banner
 master.menu.administrator.challenge.list = List challenges
 master.menu.administrator.challenge.create = Create challenge
 master.menu.administrator.dashboard.form = Display dashboard
