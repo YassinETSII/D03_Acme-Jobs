@@ -15,7 +15,6 @@ administrator.customisation.list.label.spamThreshold = Umbral de spam en tanto p
 ########################################### Feature: administrador actualiza los parámetros de customización.
 administrator.customisation.form.label.spamWords = Palabras spam:
 administrator.customisation.form.label.spamThreshold = Umbral de spam en tanto por ciento:
-administrator.customisation.form.message.spamWords = Clicka aquí para mostrar las palabras spam
 
 administrator.customisation.error.existingWord = La palabra spam que está intentando ingresar ya existe
 

@@ -15,7 +15,6 @@ administrator.customisation.list.label.spamThreshold = Spam threshold in percent
 ########################################### Feature: administrator update the customisation parameters.
 administrator.customisation.form.label.spamWords = Spam words:
 administrator.customisation.form.label.spamThreshold = Spam threshold in percent:
-administrator.customisation.form.message.spamWords = Click here to show spam words
 
 administrator.customisation.error.existingWord = The spam word you are trying to enter already exists
 
