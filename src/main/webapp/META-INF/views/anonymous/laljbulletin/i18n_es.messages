@@ -10,7 +10,7 @@
 
 ########################################### Feature: anonimo crea un boletin (Yassin Lalj).
 anonymous.laljbulletin.form.label.event = Evento:
-anonymous.laljbulletin.form.label.momentOfEvent = Fecha y hora del evento:
+anonymous.laljbulletin.form.label.momentOfEvent = Momento del evento:
 anonymous.laljbulletin.form.label.location = Localización:
 anonymous.laljbulletin.form.label.cost = Coste:
 anonymous.laljbulletin.form.button.create = Crear este boletin

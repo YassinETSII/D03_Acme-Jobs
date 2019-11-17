@@ -22,4 +22,8 @@
 		<put-attribute name="body" type="template" value="../administrator/customisation/list.jsp" />
 	</definition>
 	
+	<definition name="administrator/customisation/form" extends="master">
+		<put-attribute name="body" type="template" value="../administrator/customisation/form.jsp" />
+	</definition>
+	
 </tiles-definitions>
