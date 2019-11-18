@@ -18,7 +18,7 @@
 
 <acme:menu-bar code="master.menu.home">
 	<acme:menu-left>
-		<acme:menu-option code="master.menu.anonymous" access="isAnonymous()">
+		<acme:menu-option code="master.menu.anonymous.panel1" access="isAnonymous()">
       		<acme:menu-suboption code="master.menu.anonymous.favourite-link1" action="https://www.youtube.com/watch?v=YbnIEcTPKRY/"/>         
 			<acme:menu-suboption code="master.menu.anonymous.favourite-link2" action="https://myanimelist.net/"/>
 			<acme:menu-separator/>
@@ -30,7 +30,9 @@
 			<acme:menu-separator/>			
 			<acme:menu-suboption code="master.menu.anonymous.rodriguezbulletin.list" action="/anonymous/rodriguez-bulletin/list"/>
 			<acme:menu-suboption code="master.menu.anonymous.rodriguezbulletin.create" action="/anonymous/rodriguez-bulletin/create"/>	
-			<acme:menu-separator/>			
+		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.anonymous.panel2" access="isAnonymous()">			
 			<acme:menu-suboption code="master.menu.anonymous.announcement.list" action="/anonymous/announcement/list"/>	
 			<acme:menu-separator/>			
 			<acme:menu-suboption code="master.menu.anonymous.companyRecord.list" action="/anonymous/company-record/list"/>
@@ -54,9 +56,7 @@
 			<acme:menu-suboption code="master.menu.authenticated.challenge.list" action="/authenticated/challenge/list"/>	
 		</acme:menu-option>
 
-		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
-			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
-			<acme:menu-separator/>
+		<acme:menu-option code="master.menu.administrator.panel1" access="hasRole('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.announcement.list" action="/administrator/announcement/list"/>	
 			<acme:menu-suboption code="master.menu.administrator.announcement.create" action="/administrator/announcement/create"/>	
 			<acme:menu-separator/>
@@ -69,8 +69,18 @@
 			<acme:menu-suboption code="master.menu.administrator.challenge.list" action="/administrator/challenge/list"/>	
 			<acme:menu-suboption code="master.menu.administrator.challenge.create" action="/administrator/challenge/create"/>
 			<acme:menu-separator/>
-			<acme:menu-suboption code="master.menu.administrator.customisation.list" action="/administrator/customisation/list"/>				
+			<acme:menu-suboption code="master.menu.administrator.commercialBanner.list" action="/administrator/commercial-banner/list"/>	
+			<acme:menu-suboption code="master.menu.administrator.commercialBanner.create" action="/administrator/commercial-banner/create"/>
 			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.administrator.nonCommercialBanner.list" action="/administrator/non-commercial-banner/list"/>	
+			<acme:menu-suboption code="master.menu.administrator.nonCommercialBanner.create" action="/administrator/non-commercial-banner/create"/>
+		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.administrator.panel2" access="hasRole('Administrator')">
+			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
+			<acme:menu-separator/>				
+			<acme:menu-suboption code="master.menu.administrator.customisation.list" action="/administrator/customisation/list"/>				
+			<acme:menu-separator/>				
 			<acme:menu-suboption code="master.menu.administrator.dashboard.form" action="/administrator/dashboard/show"/>
 			<acme:menu-separator/>				
 			<acme:menu-suboption code="master.menu.administrator.chart.form" action="/administrator/chart/show"/>	

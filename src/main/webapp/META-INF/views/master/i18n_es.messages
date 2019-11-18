@@ -39,7 +39,8 @@ master.menu.authenticated.challenge.list = Listar retos
 
 # master.menu.anonymous #######################################################
 
-master.menu.anonymous = Anónimo
+master.menu.anonymous.panel1 = Panel de Anónimo 1
+master.menu.anonymous.panel2 = Panel de Anónimo 2
 master.menu.anonymous.favourite-link1 = Enlace de Yassin
 master.menu.anonymous.favourite-link2 = Enlace de Alfonso
 master.menu.anonymous.shout.list = Listar gritos
@@ -56,7 +57,8 @@ master.menu.anonymous.investorRecord.listTop = Listar mejores registros de inver
 
 # master.menu.administrator ###################################################
 
-master.menu.administrator = Administrador
+master.menu.administrator.panel1 = Panel de Administrador 1
+master.menu.administrator.panel2 = Panel de Administrador 2
 master.menu.administrator.customisation.list = Configuración
 master.menu.administrator.user-accounts = Cuentas de usuario
 master.menu.administrator.announcement.list = Listar anuncios
@@ -65,9 +67,13 @@ master.menu.administrator.companyRecord.list = Listar registros de compañías
 master.menu.administrator.companyRecord.create = Crear registro de compañía
 master.menu.administrator.investorRecord.list = Listar registros de inversores
 master.menu.administrator.investorRecord.create = Crear registro de inversores
+master.menu.administrator.commercialBanner.list = Listar banners comerciales
+master.menu.administrator.commercialBanner.create = Crear banner comercial
+master.menu.administrator.nonCommercialBanner.list = Listar banners no comerciales
+master.menu.administrator.nonCommercialBanner.create = Crear banner no comercial
 master.menu.administrator.challenge.list = Listar retos
 master.menu.administrator.challenge.create = Crear reto
-master.menu.administrator.dashboard.form = Mostrar tablero
+master.menu.administrator.dashboard.form = Mostrar tablero de estadísticas
 master.menu.administrator.chart.form = Mostrar gráficos
 master.menu.administrator.shutdown = Parar el sistema
 

@@ -400,10 +400,10 @@
 	</bean>	
 	
 	<bean id="nonCommercialBanner01" class="acme.entities.banners.NonCommercialBanner">
-		<property name="picture" value="https://www.tumblr.com/search/mosaic%20bikes"/>
-		<property name="slogan" value="We make the best bikes!"/>
+		<property name="picture" value="https://micromys.tumblr.com/post/174069181959/sierra-our-angel-dinosaur-she-came-to-us-becauses"/>
+		<property name="slogan" value="We take care of your eagle!"/>
 		<property name="URL" value="https://www.tumblr.com"/>
-		<property name="jingle" value="la lalala lololo we'are the best!"/>
+		<property name="jingle" value="your eagle is safe, ask us and don't be afraid!"/>
 	</bean>		
 		
 	<!-- Providers -->
@@ -423,7 +423,7 @@
 		<property name="identity">
 			<bean class="acme.datatypes.UserIdentity">
 				<property name="name" value="Provider" />
-				<property name="surname" value="Acme.com" />
+				<property name="surname" value="Acme" />
 				<property name="email" value="provider@acme.com" />
 			</bean>
 		</property>
@@ -455,7 +455,7 @@
 		<property name="identity">
 			<bean class="acme.datatypes.UserIdentity">
 				<property name="name" value="Consumer" />
-				<property name="surname" value="Acme.com" />
+				<property name="surname" value="Acme" />
 				<property name="email" value="consumer@acme.com" />
 			</bean>
 		</property>
