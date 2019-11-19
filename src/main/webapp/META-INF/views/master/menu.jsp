@@ -79,7 +79,7 @@
 		<acme:menu-option code="master.menu.administrator.panel2" access="hasRole('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
 			<acme:menu-separator/>				
-			<acme:menu-suboption code="master.menu.administrator.customisation.list" action="/administrator/customisation/list"/>				
+			<acme:menu-suboption code="master.menu.administrator.customisation.form" action="/administrator/customisation/show"/>				
 			<acme:menu-separator/>				
 			<acme:menu-suboption code="master.menu.administrator.dashboard.form" action="/administrator/dashboard/show"/>
 			<acme:menu-separator/>				

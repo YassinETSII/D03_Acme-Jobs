@@ -59,7 +59,7 @@ master.menu.anonymous.investorRecord.listTop = List top investor records
 
 master.menu.administrator.panel1 = Administrator Panel 1
 master.menu.administrator.panel2 = Administrator Panel 2
-master.menu.administrator.customisation.list = Customisation
+master.menu.administrator.customisation.form = Customisation
 master.menu.administrator.user-accounts = User accounts
 master.menu.administrator.announcement.list = List announcements
 master.menu.administrator.announcement.create = Create announcement

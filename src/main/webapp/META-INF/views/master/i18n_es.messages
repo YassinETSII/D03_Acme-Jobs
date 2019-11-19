@@ -59,7 +59,7 @@ master.menu.anonymous.investorRecord.listTop = Listar mejores registros de inver
 
 master.menu.administrator.panel1 = Panel de Administrador 1
 master.menu.administrator.panel2 = Panel de Administrador 2
-master.menu.administrator.customisation.list = Configuración
+master.menu.administrator.customisation.form = Configuración
 master.menu.administrator.user-accounts = Cuentas de usuario
 master.menu.administrator.announcement.list = Listar anuncios
 master.menu.administrator.announcement.create = Crear anuncio

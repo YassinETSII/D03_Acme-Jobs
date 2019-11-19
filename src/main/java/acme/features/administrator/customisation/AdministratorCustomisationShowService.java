@@ -43,10 +43,7 @@ public class AdministratorCustomisationShowService implements AbstractShowServic
 		assert request != null;
 
 		Customisation result;
-		int id;
-
-		id = request.getModel().getInteger("id");
-		result = this.repository.findOneById(id);
+		result = this.repository.findOne();
 
 		return result;
 	}
