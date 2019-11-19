@@ -25,9 +25,9 @@ administrator.challenge.form.label.bronzeReward: Recompensa de bronce:
 administrator.challenge.form.label.goalReward = Objetivo-Recompensa:
 
 administrator.challenge.error.deadline = La fecha de vencimiento debe estar en el futuro
-administrator.challenge.error.goldCurrency = La moneda debe ser EUR
-administrator.challenge.error.silverCurrency = La moneda debe ser EUR
-administrator.challenge.error.bronzeCurrency = La moneda debe ser EUR
+administrator.challenge.error.goldCurrency = La moneda debe ser EUR o €
+administrator.challenge.error.silverCurrency = La moneda debe ser EUR o €
+administrator.challenge.error.bronzeCurrency = La moneda debe ser EUR o €
 administrator.challenge.error.rangeAmountBronze = La recompensa de bronce debe ser menor que las de plata y oro
 administrator.challenge.error.rangeAmountSilver = La recompensa de plata debe ser menor que la de oro
 

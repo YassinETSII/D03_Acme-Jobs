@@ -81,19 +81,19 @@ public class AdministratorChallengeCreateService implements AbstractCreateServic
 
 		if (!errors.hasErrors("goldReward")) { //Check if goldReward has no errors
 			goldCurrency = entity.getGoldReward().getCurrency();
-			acceptedGoldCurrency = goldCurrency.equals("EUR");
+			acceptedGoldCurrency = goldCurrency.equals("EUR") || goldCurrency.equals("€");
 			errors.state(request, acceptedGoldCurrency, "goldReward", "administrator.challenge.error.goldCurrency");
 		}
 
 		if (!errors.hasErrors("silverReward")) { //Check if silverReward has no errors
 			silverCurrency = entity.getSilverReward().getCurrency();
-			acceptedSilverCurrency = silverCurrency.equals("EUR");
+			acceptedSilverCurrency = silverCurrency.equals("EUR") || silverCurrency.equals("€");
 			errors.state(request, acceptedSilverCurrency, "silverReward", "administrator.challenge.error.silverCurrency");
 		}
 
 		if (!errors.hasErrors("bronzeReward")) { //Check if bronzeReward has no errors
 			bronzeCurrency = entity.getBronzeReward().getCurrency();
-			acceptedBronzeCurrency = bronzeCurrency.equals("EUR");
+			acceptedBronzeCurrency = bronzeCurrency.equals("EUR") || bronzeCurrency.equals("€");
 			errors.state(request, acceptedBronzeCurrency, "bronzeReward", "administrator.challenge.error.bronzeCurrency");
 		}
 

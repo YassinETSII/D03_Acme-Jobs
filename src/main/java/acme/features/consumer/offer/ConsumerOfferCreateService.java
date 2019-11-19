@@ -96,13 +96,13 @@ public class ConsumerOfferCreateService implements AbstractCreateService<Consume
 
 		if (!errors.hasErrors("minReward")) { //Check if minReward has no errors
 			minCurrency = entity.getMinReward().getCurrency();
-			acceptedMinCurrency = minCurrency.equals("EUR");
+			acceptedMinCurrency = minCurrency.equals("EUR") || minCurrency.equals("€");
 			errors.state(request, acceptedMinCurrency, "minReward", "consumer.offer.error.minCurrency");
 		}
 
 		if (!errors.hasErrors("maxReward")) { //Check if maxReward has no errors
 			maxCurrency = entity.getMaxReward().getCurrency();
-			acceptedMaxCurrency = maxCurrency.equals("EUR");
+			acceptedMaxCurrency = maxCurrency.equals("EUR") || maxCurrency.equals("€");
 			errors.state(request, acceptedMaxCurrency, "maxReward", "consumer.offer.error.maxCurrency");
 		}
 
