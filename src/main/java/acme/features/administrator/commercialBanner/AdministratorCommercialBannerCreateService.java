@@ -44,7 +44,7 @@ public class AdministratorCommercialBannerCreateService implements AbstractCreat
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "picture", "slogan", "URL", "creditCard");
+		request.unbind(entity, model, "picture", "slogan", "URL", "holder", "expirationMonth", "expirationYear", "creditCardNumber", "brand", "CVV");
 	}
 
 	@Override
