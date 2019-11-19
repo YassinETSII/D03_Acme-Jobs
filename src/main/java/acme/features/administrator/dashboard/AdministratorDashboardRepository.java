@@ -1,6 +1,8 @@
 
 package acme.features.administrator.dashboard;
 
+import java.util.Date;
+
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
@@ -18,28 +20,28 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	@Query("select count(i) from InvestorRecord i")
 	Integer numberInvestorRecords();
 
-	@Query("select min(r.reward.amount) from Request r where r.deadline > CURRENT_DATE")
-	Double minimumNumberOfRewardsOfActiveRequests();
+	@Query("select min(r.reward.amount) from Request r where r.deadline > ?1")
+	Double minimumNumberOfRewardsOfActiveRequests(Date d);
 
-	@Query("select max(r.reward.amount) from Request r where r.deadline > CURRENT_DATE")
-	Double maximumNumberOfRewardsOfActiveRequests();
+	@Query("select max(r.reward.amount) from Request r where r.deadline > ?1")
+	Double maximumNumberOfRewardsOfActiveRequests(Date d);
 
-	@Query("select avg(r.reward.amount) from Request r where r.deadline > CURRENT_DATE")
-	Double averageNumberOfRewardsOfActiveRequests();
+	@Query("select avg(r.reward.amount) from Request r where r.deadline > ?1")
+	Double averageNumberOfRewardsOfActiveRequests(Date d);
 
-	@Query("select stddev(r.reward.amount) from Request r where r.deadline > CURRENT_DATE")
-	Double standardDesviationNumberOfRewardsOfActiveRequests();
+	@Query("select stddev(r.reward.amount) from Request r where r.deadline > ?1")
+	Double standardDesviationNumberOfRewardsOfActiveRequests(Date d);
 
-	@Query("select min((o.minReward.amount+o.maxReward.amount)/2) from Offer o where o.deadline > CURRENT_DATE")
-	Double minimumNumberOfRewardsOfActiveOffers();
+	@Query("select min(o.minReward.amount) from Offer o where o.deadline > ?1")
+	Double minimumNumberOfRewardsOfActiveOffers(Date d);
 
-	@Query("select max((o.minReward.amount+o.maxReward.amount)/2) from Offer o where o.deadline > CURRENT_DATE")
-	Double maximumNumberOfRewardsOfActiveOffers();
+	@Query("select max(o.maxReward.amount) from Offer o where o.deadline > ?1")
+	Double maximumNumberOfRewardsOfActiveOffers(Date d);
 
-	@Query("select avg((o.minReward.amount+o.maxReward.amount)/2) from Offer o where o.deadline > CURRENT_DATE")
-	Double averageNumberOfRewardsOfActiveOffers();
+	@Query("select avg((o.minReward.amount+o.maxReward.amount)/2) from Offer o where o.deadline > ?1")
+	Double averageNumberOfRewardsOfActiveOffers(Date d);
 
-	@Query("select stddev((o.minReward.amount+o.maxReward.amount)/2) from Offer o where o.deadline > CURRENT_DATE")
-	Double standardDesviationNumberOfRewardsOfActiveOffers();
+	@Query("select stddev((o.minReward.amount+o.maxReward.amount)/2) from Offer o where o.deadline > ?1")
+	Double standardDesviationNumberOfRewardsOfActiveOffers(Date d);
 
 }
