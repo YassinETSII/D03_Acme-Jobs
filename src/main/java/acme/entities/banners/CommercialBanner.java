@@ -30,7 +30,7 @@ public class CommercialBanner extends Banner {
 	private Integer				expirationMonth;
 
 	@NotNull
-	@Range(min = 19, max = 99)
+	@Range(min = 0, max = 99)
 	private Integer				expirationYear;
 
 	@NotBlank

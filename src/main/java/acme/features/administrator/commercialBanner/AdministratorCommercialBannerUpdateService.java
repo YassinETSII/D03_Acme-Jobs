@@ -1,6 +1,10 @@
 
 package acme.features.administrator.commercialBanner;
 
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -52,6 +56,24 @@ public class AdministratorCommercialBannerUpdateService implements AbstractUpdat
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+
+		Calendar c = new GregorianCalendar();
+		Date d = c.getTime();
+		Boolean activeMonth;
+		Boolean currentYear;
+
+		//Check if the entered year is equal or superior than the current year
+		if (!errors.hasErrors("expirationYear")) { //Check if expirationYear has no errors
+			currentYear = entity.getExpirationYear() >= d.getYear() - 100;
+			errors.state(request, currentYear, "expirationYear", "administrator.commercialBanner.error.expirationYear");
+		}
+		//Check if the entered month is equal or superior than the current month if it is in the current year
+		if (!errors.hasErrors("expirationMonth") && !errors.hasErrors("expirationYear")) { //Check if expirationMonth and expirationYear have no errors
+			if (entity.getExpirationYear() == d.getYear() - 100) {
+				activeMonth = entity.getExpirationMonth() >= d.getMonth() + 1;
+				errors.state(request, activeMonth, "expirationMonth", "administrator.commercialBanner.error.expirationMonth");
+			}
+		}
 
 	}
 
