@@ -382,21 +382,20 @@
 		<property name="silverReward" value="1800.0 EUR"/>
 		<property name="bronzeReward" value="200.0 EUR"/>
 	</bean>
-	
-	<!-- Customisation -->
-	
-	<bean id="customisation" class="acme.entities.customisation.Customisation">
-		<property name="spamWords" value="sex, hard core, viagra, cialis, nigeria, you've won, million dollar, sexo, hardcore, has ganado, un millon de dolares"></property>
-		<property name="spamThreshold" value="1.0"/>
-	</bean>
-	
+
 	<!-- Banner -->
 
 	<bean id="commercialBanner01" class="acme.entities.banners.CommercialBanner">
 		<property name="picture" value="https://www.tumblr.com/search/mosaic%20bikes"/>
 		<property name="slogan" value="We make the best bikes!"/>
 		<property name="URL" value="https://www.tumblr.com"/>
-		<property name="creditCard" value="4326305796474590"/>
+		<property name="holder" value="Anselmo Rocoso Quintero"/>
+		<property name="expirationMonth" value="11"/>
+		<property name="expirationYear" value="22"/>
+		<property name="creditCardNumber" value="4916164401239057"/>
+		<property name="brand" value="VISA"/>
+		<property name="CVV" value="2134"/>
+		
 	</bean>	
 	
 	<bean id="nonCommercialBanner01" class="acme.entities.banners.NonCommercialBanner">

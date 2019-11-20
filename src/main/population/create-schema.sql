@@ -63,7 +63,12 @@
         `url` varchar(255),
         `picture` varchar(255),
         `slogan` varchar(255),
-        `credit_card` varchar(255),
+        `cvv` varchar(255),
+        `brand` varchar(255),
+        `credit_card_number` varchar(255),
+        `expiration_month` integer,
+        `expiration_year` integer,
+        `holder` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -202,9 +207,16 @@
     ) engine=InnoDB;
 
     insert into `hibernate_sequence` values ( 1 );
+create index IDXnhikaa2dj3la6o2o7e9vo01y0 on `announcement` (`moment`);
+create index IDXnr284tes3x8hnd3h716tmb3fr on `challenge` (`deadline`);
+create index IDX9pkce3d1y6w47wadap5s5xptc on `company_record` (`stars`);
+create index IDXk2t3uthe649ao1jllcuks0gv4 on `investor_record` (`stars`);
+create index IDXl7vmp7ocxxv2b7k83lu99fhqs on `lalj_bulletin` (`moment_of_event`);
+create index IDXq2o9psuqfuqmq59f0sq57x9uf on `offer` (`deadline`);
 
     alter table `offer` 
        add constraint UK_iex7e8fs0fh89yxpcnm1orjkm unique (`ticker`);
+create index IDXlrvsw21ylkdqa1shrkwg1yssx on `request` (`deadline`);
 
     alter table `request` 
        add constraint UK_9mxq3powq8tqctclj0fbi2nih unique (`ticker`);

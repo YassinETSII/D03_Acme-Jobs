@@ -74,10 +74,8 @@ public class AdministratorCustomisationUpdateService implements AbstractUpdateSe
 	public Customisation findOne(final Request<Customisation> request) {
 		assert request != null;
 		Customisation result;
-		int id;
 
-		id = request.getModel().getInteger("id");
-		result = this.repository.findOneById(id);
+		result = this.repository.findOne();
 
 		return result;
 	}

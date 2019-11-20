@@ -8,10 +8,6 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-########################################### Feature: administrador muestra los parámetros de customización.
-administrator.customisation.list.label.spamWords = Palabras spam
-administrator.customisation.list.label.spamThreshold = Umbral de spam en tanto por ciento
-
 ########################################### Feature: administrador actualiza los parámetros de customización.
 administrator.customisation.form.label.spamWords = Palabras spam:
 administrator.customisation.form.label.spamThreshold = Umbral de spam en tanto por ciento:

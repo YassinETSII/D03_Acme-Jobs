@@ -25,9 +25,9 @@ administrator.challenge.form.label.bronzeReward: Bronze reward:
 administrator.challenge.form.label.goalReward = Goal-Reward:
 
 administrator.challenge.error.deadline = Deadline must be in future
-administrator.challenge.error.goldCurrency = Currency must be EUR
-administrator.challenge.error.silverCurrency = Currency must be EUR
-administrator.challenge.error.bronzeCurrency = Currency must be EUR
+administrator.challenge.error.goldCurrency = Currency must be EUR or €
+administrator.challenge.error.silverCurrency = Currency must be EUR or €
+administrator.challenge.error.bronzeCurrency = Currency must be EUR or €
 administrator.challenge.error.rangeAmountBronze = Bronze reward must be less than silver and gold rewards
 administrator.challenge.error.rangeAmountSilver = Silver reward must be less than gold reward
 
