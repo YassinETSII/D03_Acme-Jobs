@@ -56,7 +56,8 @@ CREATE TABLE `announcement` (
   `more_info` varchar(255) DEFAULT NULL,
   `text` varchar(255) DEFAULT NULL,
   `title` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `IDXnhikaa2dj3la6o2o7e9vo01y0` (`moment`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -171,7 +172,8 @@ CREATE TABLE `challenge` (
   `silver_reward_amount` double DEFAULT NULL,
   `silver_reward_currency` varchar(255) DEFAULT NULL,
   `title` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `IDXnr284tes3x8hnd3h716tmb3fr` (`deadline`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -197,7 +199,12 @@ CREATE TABLE `commercial_banner` (
   `url` varchar(255) DEFAULT NULL,
   `picture` varchar(255) DEFAULT NULL,
   `slogan` varchar(255) DEFAULT NULL,
-  `credit_card` varchar(255) DEFAULT NULL,
+  `cvv` varchar(255) DEFAULT NULL,
+  `brand` varchar(255) DEFAULT NULL,
+  `credit_card_number` varchar(255) DEFAULT NULL,
+  `expiration_month` int(11) DEFAULT NULL,
+  `expiration_year` int(11) DEFAULT NULL,
+  `holder` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -231,7 +238,7 @@ CREATE TABLE `company_record` (
   `stars` int(11) DEFAULT NULL,
   `web` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `UK_ssc7d0vl7xqysfq2gp9hryv61` (`phone`)
+  KEY `IDX9pkce3d1y6w47wadap5s5xptc` (`stars`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -294,6 +301,7 @@ CREATE TABLE `customisation` (
 
 LOCK TABLES `customisation` WRITE;
 /*!40000 ALTER TABLE `customisation` DISABLE KEYS */;
+INSERT INTO `customisation` VALUES (6,0,1,'sex, hard core, viagra, cialis, nigeria, you\'ve won, million dollar, sexo, hardcore, has ganado, un millon de dolares');
 /*!40000 ALTER TABLE `customisation` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -365,7 +373,7 @@ CREATE TABLE `hibernate_sequence` (
 
 LOCK TABLES `hibernate_sequence` WRITE;
 /*!40000 ALTER TABLE `hibernate_sequence` DISABLE KEYS */;
-INSERT INTO `hibernate_sequence` VALUES (6);
+INSERT INTO `hibernate_sequence` VALUES (7);
 /*!40000 ALTER TABLE `hibernate_sequence` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -383,7 +391,8 @@ CREATE TABLE `investor_record` (
   `sector` varchar(255) DEFAULT NULL,
   `stars` int(11) DEFAULT NULL,
   `statement` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `IDXk2t3uthe649ao1jllcuks0gv4` (`stars`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -406,11 +415,13 @@ DROP TABLE IF EXISTS `lalj_bulletin`;
 CREATE TABLE `lalj_bulletin` (
   `id` int(11) NOT NULL,
   `version` int(11) NOT NULL,
-  `euros` double DEFAULT NULL,
+  `cost_amount` double DEFAULT NULL,
+  `cost_currency` varchar(255) DEFAULT NULL,
   `event` varchar(255) DEFAULT NULL,
   `location` varchar(255) DEFAULT NULL,
   `moment_of_event` datetime(6) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `IDXl7vmp7ocxxv2b7k83lu99fhqs` (`moment_of_event`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -470,7 +481,8 @@ CREATE TABLE `offer` (
   `ticker` varchar(255) DEFAULT NULL,
   `title` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `UK_iex7e8fs0fh89yxpcnm1orjkm` (`ticker`)
+  UNIQUE KEY `UK_iex7e8fs0fh89yxpcnm1orjkm` (`ticker`),
+  KEY `IDXq2o9psuqfuqmq59f0sq57x9uf` (`deadline`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -529,7 +541,8 @@ CREATE TABLE `request` (
   `ticker` varchar(255) DEFAULT NULL,
   `title` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `UK_9mxq3powq8tqctclj0fbi2nih` (`ticker`)
+  UNIQUE KEY `UK_9mxq3powq8tqctclj0fbi2nih` (`ticker`),
+  KEY `IDXlrvsw21ylkdqa1shrkwg1yssx` (`deadline`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -621,7 +634,7 @@ CREATE TABLE `user_account` (
 
 LOCK TABLES `user_account` WRITE;
 /*!40000 ALTER TABLE `user_account` DISABLE KEYS */;
-INSERT INTO `user_account` VALUES (1,0,_binary '\0','john.doe@acme.com','John','Doe','$2a$05$QegQwOL7qii2eSFFeJWlIuk2jGiVwUnsYj85RNSyk8/yQqJWsJSIy','anonymous'),(3,0,_binary '','administrator@acme.com','Administrator','Acme.com','$2a$05$pxIv.ruVeWYUwK.WPGGZfevxtQpXPwmFVdaIZQyXjsuDGKPqx1dF2','administrator');
+INSERT INTO `user_account` VALUES (1,0,_binary '\0','john.doe@acme.com','John','Doe','$2a$05$xEDv9DB4hHOfLUXQ/t9QWuaG16MPQTE0Uj3UZ3kO84I2WlkmNJuY.','anonymous'),(3,0,_binary '','administrator@acme.com','Administrator','Acme.com','$2a$05$sAHqZtL7754w4qyUXRkO0OqV./7hyfDN3mJ2fjBdUd9FRp.18b6z2','administrator');
 /*!40000 ALTER TABLE `user_account` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -634,4 +647,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-11-05 18:45:10
+-- Dump completed on 2019-11-20 13:18:54
